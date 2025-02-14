@@ -139,7 +139,6 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
 
   return (
     <div className="bg-[#02191D] w-full max-w-[90%] sm:max-w-[700px] h-auto md:h-[980px] p-6 sm:p-12 rounded-[40px] border border-[#0e464f] flex flex-col justify-center items-center gap-8 mt-16 mb-8 mx-auto">
-      
       <div className="w-full md:w-[604px] mx-auto">
         <div className="w-full md:w-[604px]">
           <div className="flex justify-between items-center">
@@ -264,17 +263,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
               </p>
             )}
           </div>
-          <div data-svg-wrapper className="relative mt-8">
-            <svg
-              width="556"
-              height="4"
-              viewBox="0 0 556 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="556" height="4.0001" fill="#07373F" />
-            </svg>
-          </div>
+          <hr className="border-t-4 border-[#0e464f] w-full my-4" />
 
           <form onSubmit={handleSubmit(onSubmitStep2)} className="mt-6">
             <label className="block text-white mb-2">Enter your name</label>
@@ -290,9 +279,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
               </p>
             )}
 
-            <label className="block text-white mt-4 mb-2">
-              Email Address
-            </label>
+            <label className="block text-white mt-4 mb-2">Email Address</label>
             <input
               type="email"
               {...register("email", { required: "Email is required" })}

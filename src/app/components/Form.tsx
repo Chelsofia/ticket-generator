@@ -76,33 +76,25 @@ const selectedTicket = watch("ticketType");
         </div>
 
         <div className="bg-[#08252B] p-4 rounded-[40px] my-6 w-full md:w-[604px]  md:h-[726px] border border-[#0e464f] mx-auto">
-          <div className="text-center rounded-[40px] flex flex-col justify-center border border-[#0e464f] h-[200px] shadow- bg-gradient-to-tl from-[#08242A] to-[#0D353E]">
+          <div className="text-center rounded-[40px] flex flex-col justify-center border border-[#0e464f] h-auto md:h-[200px] shadow bg-gradient-to-tl from-[#08242A] to-[#0D353E] p-6 md:p-8">
             <h2
-              className={`${styles.customFont} text-center text-neutral-50 backdrop-blur-[14px] text-[62px] font-normal leading-[62px]`}
+              className={`${styles.customFont} text-center text-neutral-50 backdrop-blur-[14px] text-[36px] md:text-[62px] font-normal leading-[42px] md:leading-[62px]`}
             >
               Techember Fest &quot;25
             </h2>
 
-            <p className="text-white text-sm">
+            <p className="text-white text-sm md:text-base">
               Join us for an unforgettable experience at
             </p>
-            <p className="text-white">[Event Name]! Secure your spot now.</p>
-            <p className="text-white">
-              📍[Event Location]| March 15, 2025 | 7:00 PM
+            <p className="text-white text-sm md:text-base">
+              [Event Name]! Secure your spot now.
+            </p>
+            <p className="text-white text-sm md:text-base">
+              📍[Event Location] | March 15, 2025 | 7:00 PM
             </p>
           </div>
 
-          <div data-svg-wrapper className="relative mt-8">
-            <svg
-              width="556"
-              height="4"
-              viewBox="0 0 556 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="556" height="4.0001" fill="#07373F" />
-            </svg>
-          </div>
+          <hr className="border-t-4 border-[#0e464f] w-full my-4" />
 
           <h1 className="text-white mb-2 mt-4 text-neutral-50 text-base">
             Select Ticket Type:
