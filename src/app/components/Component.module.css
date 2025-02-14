@@ -8,14 +8,4 @@
 
 .customBackground {
   background: #02191D;
-}
 
-/* Override browser autofill styles for input and textarea */
-:global(input:-webkit-autofill),
-:global(input:-webkit-autofill:focus),
-:global(textarea:-webkit-autofill),
-:global(textarea:-webkit-autofill:focus) {
-  -webkit-box-shadow: 0 0 0 1000px #042127 inset !important;
-  box-shadow: 0 0 0 1000px #042127 inset !important;
-  -webkit-text-fill-color: #e2e8f0 !important;
-}
