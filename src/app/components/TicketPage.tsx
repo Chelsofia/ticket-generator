@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "../components/Component.module.css";
-import Form from "../components/Form"
 import BarCode from "./BarCode";
 
 
@@ -13,7 +12,7 @@ interface FormProps {
 
 
 const TicketPage:React.FC<FormProps> = ({ onBack }) => {
-    const [step, setStep] = useState(1);
+   
   const [ticketDetails, setTicketDetails] = useState<any>(null);
   const storedImage = localStorage.getItem("uploadedImage");
 

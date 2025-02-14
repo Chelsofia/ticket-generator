@@ -2,19 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react"; 
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prevState) => !prevState);
-  };
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
 
   return (
     <nav className="bg-[#05252C] border border-[#197686] text-black p-2 rounded-[20px] w-[95%] md:w-[1120px] mx-auto top-0 left-0 shadow-md mt-4">
@@ -46,7 +36,7 @@ const Navbar = () => {
             { href: "/tickets", label: "My Tickets" },
             { href: "/about", label: "About Project" },
           ].map((link) => (
-            <Link key={link.href} href={link.href} onClick={handleLinkClick}>
+            <Link key={link.href} href={link.href}>
               <span
                 className={`font-['JejuMyeongjo'] relative pl-4 ${
                   pathname === link.href

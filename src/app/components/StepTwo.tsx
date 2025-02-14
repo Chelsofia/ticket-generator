@@ -21,7 +21,7 @@ const CLOUDINARY_UPLOAD_PRESET = "ml_default";
 
 const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
   const [files, setFiles] = useState<FileWithPreview[]>([]);
-  const [nextMessage, setNextMessage] = useState("");
+  const [, setNextMessage] = useState("");
   const [fileError, setFileError] = useState("");
   const [uploadMessage, setUploadMessage] = useState("");
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
@@ -62,7 +62,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
 
     setFileError("");
     setNextMessage("Uploading...");
-    setLoading(true); // Start loading
+    setLoading(true); 
 
     const file = acceptedFiles[0];
     const formData = new FormData();
@@ -93,7 +93,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
       console.error("Upload error:", error);
       setFileError("Upload failed. Please try again.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); 
       setNextMessage("");
     }
   }, []);
@@ -301,7 +301,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
             <input
               type="email"
               {...register("email", { required: "Email is required" })}
-              className="w-full bg-[#042127] border border-[#07363e] text-whitee p-2 rounded-md"
+              className="w-full bg-[#042127] border border-[#07363e] text-white p-2 rounded-md"
               required
             />
             {errors.email && (
