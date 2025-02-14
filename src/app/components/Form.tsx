@@ -16,7 +16,7 @@ const Form:React.FC<FormProps> = ({ onNext }) => {
   const { register, handleSubmit, watch, reset, formState: { errors }} = useForm();
 
 
-const [formLoaded, setFormLoaded] = useState(false);
+const [ , setFormLoaded] = useState(false);
 
 useEffect(() => {
   const savedData = localStorage.getItem("step1Data");
@@ -36,11 +36,10 @@ const selectedTicket = watch("ticketType");
 
 
 
-  const onSubmitStep1 = (data: any) => {
+  const onSubmitStep1 = (data: Record<string, unknown>) => {
     console.log("Step 1 data:", data);
     localStorage.setItem("step1Data", JSON.stringify(data));
 
-    
     onNext();
   };
   return (
