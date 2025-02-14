@@ -106,8 +106,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
   });
 
   
-  const onSubmitStep2 = async (data: any) => {
-    
+  const onSubmitStep2 = async (data: Record<string, unknown>) => {
     if (files.length === 0) {
       setFileError("Avatar is required.");
       return;
@@ -115,20 +114,16 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
     setNextMessage("Processing your submission...");
     console.log("Step 2 data submitted", data);
 
-  
     const step1Data = localStorage.getItem("step1Data");
     const parsedStep1Data = step1Data ? JSON.parse(step1Data) : {};
 
-    
     const completeData = {
-      ...parsedStep1Data, 
-      ...data, 
+      ...parsedStep1Data,
+      ...data,
     };
 
-    
     localStorage.setItem("ticketDetails", JSON.stringify(completeData));
 
-    
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     setNextMessage("");

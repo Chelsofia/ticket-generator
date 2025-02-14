@@ -13,7 +13,15 @@ interface FormProps {
 
 const TicketPage:React.FC<FormProps> = ({ onBack }) => {
    
-  const [ticketDetails, setTicketDetails] = useState<any>(null);
+  interface TicketDetails {
+    name: string;
+    email: string;
+    ticketType: string;
+    ticketCount: number;
+    specialRequest?: string;
+  }
+  
+  const [ticketDetails, setTicketDetails] = useState<TicketDetails | null>(null);
   const storedImage = localStorage.getItem("uploadedImage");
 
   const handleBookAnotherTicket = () => {
