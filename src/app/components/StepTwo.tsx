@@ -25,6 +25,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
   const [fileError, setFileError] = useState("");
   const [uploadMessage, setUploadMessage] = useState("");
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
+  const [ticketType, setTicketType] = useState("");
 
   const {
     register,
@@ -34,19 +35,33 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
     setValue,
   } = useForm();
 
-  useEffect(() => {
-    const savedData = localStorage.getItem("ticketDetails");
-    if (savedData) {
-      try {
-        const parsedData = JSON.parse(savedData);
-        Object.keys(parsedData).forEach((key) => {
-          setValue(key, parsedData[key]); 
-        });
-      } catch (error) {
-        console.error("Error parsing local storage data:", error);
-      }
+   
+useEffect(() => {
+  const savedData = localStorage.getItem("ticketDetails");
+  if (savedData) {
+    try {
+      const parsedData = JSON.parse(savedData);
+      Object.keys(parsedData).forEach((key) => {
+        setValue(key, parsedData[key]);
+      });
+    } catch (error) {
+      console.error("Error parsing local storage data:", error);
     }
-  }, [setValue]); 
+  }
+
+  const step1Data = localStorage.getItem("step1Data");
+  if (step1Data) {
+    try {
+      const parsedStep1Data = JSON.parse(step1Data);
+      setTicketType(parsedStep1Data.ticketType || "Free Ticket");
+    } catch (error) {
+      console.error("Error retrieving ticket type:", error);
+    }
+  }
+}, [setValue]);
+
+
+ 
 
   useEffect(() => {
     const subscription = watch((data) => {
@@ -318,7 +333,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
                 disabled={isSubmitting}
               >
                 <span className="text-white text-base font-normal font-['JejuMyeongjo']">
-                  Get my Free Ticket
+                  Get my {ticketType} Ticket
                 </span>
               </button>
             </div>
