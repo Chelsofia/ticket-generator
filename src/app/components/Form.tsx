@@ -100,14 +100,10 @@ const selectedTicket = watch("ticketType");
             Select Ticket Type:
           </h1>
           <form onSubmit={handleSubmit(onSubmitStep1)}>
-            <div className="flex flex-col items-center p-4 bg-[#042127] rounded-3xl border border-[#07363e]">
-              <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col items-center p-4 bg-[#042127] rounded-3xl border border-[#07363e] w-full">
+              <div className="flex flex-wrap justify-center gap-4 w-full">
                 {[
-                  {
-                    type: "regular",
-                    price: "Free",
-                    access: "REGULAR ACCESS",
-                  },
+                  { type: "regular", price: "Free", access: "REGULAR ACCESS" },
                   { type: "vip", price: "$50", access: "VIP ACCESS" },
                   { type: "vvip", price: "$150", access: "VVIP ACCESS" },
                 ].map((ticket) => (
@@ -117,7 +113,7 @@ const selectedTicket = watch("ticketType");
                       selectedTicket === ticket.type
                         ? "bg-[#197686] rounded-lg"
                         : "bg-[#042127] rounded-md"
-                    } border border-[#07363e] p-3 w-[158px] h-[110px] flex flex-col justify-center items-left cursor-pointer`}
+                    } border border-[#07363e] p-3 flex flex-col justify-center cursor-pointer w-full sm:w-[158px] h-[110px]`}
                   >
                     <input
                       type="radio"
@@ -156,10 +152,12 @@ const selectedTicket = watch("ticketType");
             </div>
 
             {/* Buttons */}
-            <div className="h-12 w-full p-12 bg-[#041e22] rounded-3xl border border-[#0e464f] flex justify-center items-center gap-8">
+
+            <div className="w-full p-4 md:p-6 bg-[#041e22] rounded-3xl border border-[#0e464f] flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mt-8 mb-2">
               <button
+                
                 type="button"
-                className="grow shrink basis-0 h-12 px-6 py-3 rounded-lg border border-[#23a0b5] flex justify-center items-center"
+                className="w-full sm:grow sm:shrink sm:basis-0 h-12 px-6 py-3 rounded-lg border border-[#23a0b5] flex justify-center items-center"
               >
                 <span className="text-[#23a0b5] text-base font-normal font-['JejuMyeongjo']">
                   Cancel
@@ -167,7 +165,8 @@ const selectedTicket = watch("ticketType");
               </button>
               <button
                 type="submit"
-                className="grow shrink basis-0 h-12 px-6 py-3 bg-[#23a0b5] rounded-lg flex justify-center items-center"
+                className="w-full sm:grow sm:shrink sm:basis-0 h-12 px-6 py-3 bg-[#23a0b5] rounded-lg flex justify-center items-center"
+                
               >
                 <span className="text-white text-base font-normal font-['JejuMyeongjo']">
                   Next

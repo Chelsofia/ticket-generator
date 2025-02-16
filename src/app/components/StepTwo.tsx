@@ -300,6 +300,8 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
               rows={4}
               className="w-full bg-[#042127] border border-[#07363e] text-white p-2 rounded-md"
             />
+
+            
             <div className="w-full p-4 md:p-6 bg-[#041e22] rounded-3xl border border-[#0e464f] flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mt-8 mb-2">
               <button
                 onClick={onBack}
@@ -320,6 +322,7 @@ const StepTwo: React.FC<FormProps> = ({ onNext, onBack }) => {
                 </span>
               </button>
             </div>
+
           </form>
         </div>
       </div>
